@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.php
-%define         _class          File
-%define         _subclass       DNS
+%define		_class		File
+%define		_subclass	DNS
 %define		_status		devel
 %define		_pearname	%{_class}_%{_subclass}
 
