@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - Manipulate RFC1033-style DNS Zonefiles
-Summary(pl):	%{_pearname} - Manipulacja plikami stref DNS w formacie RFC1033
+Summary(pl.UTF-8):   %{_pearname} - Manipulacja plikami stref DNS w formacie RFC1033
 Name:		php-pear-%{_pearname}
 Version:	0.0.8
 Release:	4
@@ -29,9 +29,9 @@ style DNS Zones.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Klasa File_DNS dostarcza ≥atwego w uøyciu sposobu do odczytu, edycji
-oraz zapisu plikÛw stref DNS w stylu RFC1033.
+%description -l pl.UTF-8
+Klasa File_DNS dostarcza ≈Çatwego w u≈ºyciu sposobu do odczytu, edycji
+oraz zapisu plik√≥w stref DNS w stylu RFC1033.
 
 Ta klasa ma w PEAR status: %{_status}.
 
