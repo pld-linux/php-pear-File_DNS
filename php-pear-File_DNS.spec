@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - Manipulate RFC1033-style DNS Zonefiles
-Summary(pl.UTF-8):   %{_pearname} - Manipulacja plikami stref DNS w formacie RFC1033
+Summary(pl.UTF-8):	%{_pearname} - Manipulacja plikami stref DNS w formacie RFC1033
 Name:		php-pear-%{_pearname}
 Version:	0.0.8
 Release:	4
