@@ -1,18 +1,15 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		File
-%define		_subclass	DNS
 %define		_status		devel
-%define		_pearname	%{_class}_%{_subclass}
-
+%define		_pearname	File_DNS
 Summary:	%{_pearname} - Manipulate RFC1033-style DNS Zonefiles
 Summary(pl.UTF-8):	%{_pearname} - Manipulacja plikami stref DNS w formacie RFC1033
 Name:		php-pear-%{_pearname}
-Version:	0.0.8
-Release:	5
+Version:	0.1.0
+Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	3479d0aee8cc42cd2a811fd3fbc9ef8a
+# Source0-md5:	65d7a55c5ea30cb2fb11ed99f41abf98
 URL:		http://pear.php.net/package/File_DNS/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -38,10 +35,18 @@ Ta klasa ma w PEAR status: %{_status}.
 %prep
 %pear_package_setup
 
+mv docs/%{_pearname}/examples .
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
+
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+# tests should not be packaged
+rm -rf $RPM_BUILD_ROOT%{php_pear_dir}/tests/%{_pearname}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,6 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc install.log
-%doc docs/%{_pearname}/examples
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}/*.php
+%{php_pear_dir}/File/DNS.php
+
+%{_examplesdir}/%{name}-%{version}
