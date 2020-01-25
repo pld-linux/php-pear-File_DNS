@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		devel
 %define		_pearname	File_DNS
 Summary:	%{_pearname} - Manipulate RFC1033-style DNS Zonefiles
